@@ -1,0 +1,128 @@
+/* Desktop */
+.header-section{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: var(--header-height);
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-fix);
+    /* box-shadow: 0px 0px 24px 1px rgba(162, 162, 162, 0.521); */
+}
+.navbar{
+    width: 100%;
+    max-width: 1200px;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Logo */
+.nav-logo{
+    display: flex;
+    gap: 1rem;
+}
+.navbar .nav-logo img{
+    width: 50px;
+    height: 50px;
+    margin-top: .5rem;
+}
+/* menu and link */
+.nav-menu{
+    width: 70%;
+}
+.nav_list{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.nav_item:nth-child(3) .nav_link{
+    display: flex;
+}
+.nav_toggle{
+    display: none;
+    cursor: pointer;
+}
+.nav_drop_menu{
+    position: absolute;
+    top: var(--header-height);
+    padding: 2rem;
+    display: none;
+    background: rgba(91, 91, 91, 0.27);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(px);
+    border: 1px solid rgba(179, 179, 179, 0.58);
+}
+.nav_drop_menu li{
+    margin-bottom: .4rem;
+    cursor: pointer;
+}
+/*? Responsive screen around 1024px - 960px ?*/
+@media screen and (width <= 960px){
+    .nav-menu{
+        width: 85%;
+    }
+    .nav-logo p{
+        display: none;
+    }
+}
+/*? Tablet and Android ?*/
+@media screen and (width <= 768px){
+    .nav-logo{
+        margin-left: 1rem;
+    }
+    .nav-logo p{
+        display: inline-block;
+    }
+    .nav_toggle{
+        display: block;
+        margin-right: 1rem;
+    }
+    .nav-menu{
+        position: fixed;
+        top: var(--header-height);
+        right: -100%;
+        width: 40%;
+        height: 100vh;
+        padding: 2rem;
+        background-color: var(--primary-color);
+        backdrop-filter: blur(10px);
+        transition: .5s;
+    }
+    .nav_list{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 1rem;
+    }
+    .nav_item:nth-child(3) .nav_link img{
+        display: inline-block;
+    }
+    .nav_drop_menu{
+        display: block;
+        position: unset;
+        box-shadow: none;
+        border: none;
+        background: var(--primary-color);
+
+    }
+    .nav_drop_down{
+        display: none;
+    }
+}
+/*! For Javascript !*/
+.show{
+    right: 0;
+}
+.drop{
+    display: block;
+}
+.nav_drop_menu .up{
+    display: block;
+}
+.nav_toggle .close{
+    display: block;
+}

@@ -1,0 +1,107 @@
+.beranda{
+    width: 100%;
+    height: calc(100vh - 3.5rem);
+    padding-top: 3.5rem;
+}
+.attribut_beranda_right{
+    max-width: 500px;
+    position: absolute;
+    right: 0;
+    height: 150px;
+    z-index: -1;
+    transform: translateX(12px);
+}
+.attribut_beranda_left{
+    display: block;
+    max-width: 500px;
+    position: absolute;
+    left: 0;
+    height: 150px;
+    z-index: -1;
+    transform: translateX(-12px);
+}
+@media screen and (width < 1400px){
+    .attribut_beranda_left{
+        display: none;
+    }
+}
+.attribut_beranda_right img, .attribut_beranda_left img{width: 100%; height: 100%;}
+.beranda_text_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+.beranda_text_container p{
+    align-self: center;
+    padding-right: 26px;
+    margin-bottom: .9rem;
+}
+.beranda_img{
+    position: absolute;
+    filter: brightness(65%);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(/assets/img/redd-f-PTRzqc_h1r4-unsplash-min.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 62.8%;
+    /* z-index: -1; */
+}
+.beranda_img p{
+    color: white;
+    position: absolute;
+    margin-left: 1.5rem;
+    bottom: 0;
+}
+@media screen and (width <= 375px) {
+    .beranda_text_container h1{
+        font-size: 1.4rem;
+    }
+    .beranda_text_container p{
+        width: 300px;
+        font-size: .6rem;
+    }
+}
+@media screen and (width < 508px) {
+    .beranda_img{
+        height: calc(62.8% - 6%);
+    }
+}
+@media screen and (width <= 1024px){
+    .beranda_text_container p{
+        align-self: center;
+    }
+}
+@media screen and (width <= 896px){
+    .nLineTitle{
+        display: none;
+    }
+    .beranda_text_container{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .attribut_beranda_right{
+        display: none;
+    }
+    .beranda_text_container p{
+        display: block;
+        text-align: center;
+        align-self: center;
+        padding: 0;
+        margin-bottom: 0;
+        transform: translateY(-12px);
+        font-size: .9rem;
+    }
+    .beranda_text_container h1{
+        text-align: center;
+    }
+}
+@media screen and ( 695px < width <= 789px) {
+    .attribut_beranda_right, .attribut_beranda_left{
+        display: block;
+    }
+}
