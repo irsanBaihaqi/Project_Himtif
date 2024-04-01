@@ -8,12 +8,14 @@ const showMenu = (toggleId, menuId) => {
     const closeImg = document.querySelector(".nav_toggle img")
     if (toggleId && menuId) {
         toggleId.addEventListener("click", () => {
+            toggleId.classList.toggle("ring")
             menuId.classList.toggle("show")
             closeMenu(closeImg, toggleId)
         })
     }
 };
 showMenu(toggle, menu);
+
 function closeMenu(closeClassImg, toggleId) {
     toggleId.classList.toggle('close')
     if (toggleId.classList.contains('close')) {
@@ -32,6 +34,7 @@ const showDrop = (dropContainerClass, dropMenuClass) => {
     })
 };
 showDrop(dropDownContainer, dropMenu);
+
 function upDownIconList(navDropDownDiv, iconImage) {
     navDropDownDiv.classList.toggle('up')
     if (navDropDownDiv.classList.contains('up')) {
@@ -40,3 +43,20 @@ function upDownIconList(navDropDownDiv, iconImage) {
         iconImage.setAttribute('src', '/assets/icon/bx-chevron-down.svg');
     }
 }
+
+// Drop down menu
+const departement = ["BPH", "RISTEK", "HUMAS", "KOMINFO", "SOSBUD", "PSDA"];
+
+function showList(departementNames) {
+    return `<ul">
+        <li>${departementNames.map(name => `<li><a>${name}</a></li>`).join("")}</li>
+    </ul>`
+}
+dropMenu.innerHTML = showList(departement);
+
+// slide animation
+const copy = document.querySelector(".about_img").cloneNode(true);
+const slideContainer = document.querySelector(".about_img_container");
+slideContainer.appendChild(copy)
+
+// Navigasi

@@ -12,6 +12,8 @@
     --primary-color: rgb(245, 245, 245);
     --secondary-color: rgb(24, 24, 24);
     --teriary-color: rgba(255, 255, 255, 0.5);
+    --blue-color:#6488ff;
+    --brown-color:rgb(152, 137, 1);
     /* Variabel size */
     --header-height: 4.5rem;
     --mrg-xs: .5rem;
@@ -23,7 +25,7 @@
     --font-medium: 500;
     --font-bold: 600;
     --Big-font: clamp(2.4rem, 3vw, 2.6rem);
-    --medium-font: clamp(2.2rem, 4vw, 2.4rem);
+    --medium-font: clamp(2rem, 4vw, 2.4rem);
     --regular-font: clamp(1rem, 2vw, 1.2rem);
     /* z-index */
     --z-fix: 100;
@@ -42,7 +44,7 @@ body{
 main{
     max-width: 1200px;
 }
-h1,h2,h3{
+h1,h2{
     font-family: "Montserrat";
     font-weight: var(--font-bold);
     text-align: left;
@@ -76,5 +78,13 @@ ul > li{
 @media screen and (width <= 896px){
     h1{
         font-size: calc(var(--Big-font) - .6rem);
+    }
+}
+@media screen and (width <= 375px) {
+    h1{
+        font-size: 2rem;
+    }
+    p{
+        font-size: 1rem;
     }
 }
