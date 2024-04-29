@@ -15,7 +15,6 @@ const showMenu = (toggleId, menuId) => {
     }
 };
 showMenu(toggle, menu);
-
 function closeMenu(closeClassImg, toggleId) {
     toggleId.classList.toggle('close')
     if (toggleId.classList.contains('close')) {
@@ -55,8 +54,15 @@ function showList(departementNames) {
 dropMenu.innerHTML = showList(departement);
 
 // slide animation
-const copy = document.querySelector(".about_img").cloneNode(true);
-const slideContainer = document.querySelector(".about_img_container");
-slideContainer.appendChild(copy)
+let next = document.querySelector('.next')
+let prev = document.querySelector('.prev')
 
-// Navigasi
+next.addEventListener('click', function(){
+    let items = document.querySelectorAll('.item')
+    document.querySelector('.slide').appendChild(items[0])
+})
+
+prev.addEventListener('click', function(){
+    let items = document.querySelectorAll('.item')
+    document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
+})

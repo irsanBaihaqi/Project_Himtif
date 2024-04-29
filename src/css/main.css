@@ -4,12 +4,13 @@
 @import url(/public/css_section/beranda.css);
 @import url(/public/css_section/header.css);
 @import url(/public/css_section/tentang.css);
-@import url(/public/css_section/proker.css);
+@import url(/public/css_section/contact.css);
+@import url(/public/css_section/departement.css);
 @import url(/public/css_section/blog.css);
 @import url(/public/css_section/footer.css);
 :root{
     /* Color */
-    --primary-color: rgb(245, 245, 245);
+    --primary-color: rgb(230, 229, 229);
     --secondary-color: rgb(24, 24, 24);
     --teriary-color: rgba(255, 255, 255, 0.5);
     --blue-color:#6488ff;
@@ -30,9 +31,12 @@
     /* z-index */
     --z-fix: 100;
 }
-body{
+*{
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+body{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,7 +48,7 @@ body{
 main{
     max-width: 1200px;
 }
-h1,h2{
+h1,h2,h3{
     font-family: "Montserrat";
     font-weight: var(--font-bold);
     text-align: left;
@@ -78,6 +82,9 @@ ul > li{
 @media screen and (width <= 896px){
     h1{
         font-size: calc(var(--Big-font) - .6rem);
+    }
+    h2{
+        font-size: calc(var(--medium-font) - .2rem);
     }
 }
 @media screen and (width <= 375px) {
